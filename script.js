@@ -75,3 +75,21 @@ function arrTask(arr) {
 
 console.log(arrTask([2, 1, 3, 5, 6]));
 //
+
+// Напишите функцию, которая принимает строку и возвращает эту строку, но все слова в ней записаны задом наперед. Если в строке есть знаки препинания, они должны остаться на своих местах.
+function reverseWords(str) {
+	// Разбиваем строку на массив слов
+	const words = str.split(" ");
+
+	// Используем метод map для переворачивания каждого слова
+	const reversedWords = words.map((word) => {
+		// Используем метод split, reverse и join для переворачивания слова
+		return word.split("").reverse().join("");
+	});
+
+	// Объединяем массив перевернутых слов в строку с помощью метода join
+	return reversedWords.join(" ");
+}
+
+console.log(reverseWords("The quick brown fox jumps over the lazy dog."));
+//
