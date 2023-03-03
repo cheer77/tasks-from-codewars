@@ -43,10 +43,16 @@ function check() {
 
 	input.value = "";
 }
-
 // Задача угадай слово
 
 //Напиши программу, которая проверяет, является ли число четным или нечетным, и выводит соответствующее сообщение в консоль.
+function numCheck(num) {
+	return num % 2 === 0 ? "Четное" : "Не четное";
+}
+console.log(numCheck(2));
+///
+
+////////////////////
 
 function numCheck(num) {
 	return num % 2 === 0 ? "Четное" : "Не четное";
@@ -54,3 +60,18 @@ function numCheck(num) {
 
 console.log(numCheck(2));
 ///
+
+//Напишите программу, которая принимает массив целых чисел и возвращает новый массив, содержащий только четные числа из исходного массива.
+function arrTask(arr) {
+	const newArr = [];
+
+	for (let i = 0; i < arr.length; i++) {
+		if (arr[i] % 2 === 0) {
+			newArr.push(arr[i]);
+		}
+	}
+	return newArr;
+}
+
+console.log(arrTask([2, 1, 3, 5, 6]));
+//
