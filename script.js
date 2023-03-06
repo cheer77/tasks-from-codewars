@@ -104,13 +104,32 @@
 
 // Напишите функцию calculateSum, которая принимает массив чисел и возвращает сумму всех чисел в массиве.
 
-const arr = [1, 2, 3, 4, 5];
-function calculateSum(num) {
-	let sum = 0;
-	for (let i = 0; i < num.length; i++) {
-		sum = sum + num[i];
-	}
-	return sum;
+// const arr = [1, 2, 3, 4, 5];
+// function calculateSum(num) {
+// 	let sum = 0;
+// 	for (let i = 0; i < num.length; i++) {
+// 		sum = sum + num[i];
+// 	}
+// 	return sum;
+// }
+
+// console.log(calculateSum(arr));
+
+// напишите функцию filterOddNumbers, которая принимает массив чисел и возвращает новый массив, содержащий только нечетные числа из исходного массива. Используйте метод filter() для решения этой задачи.
+
+const numbers = [1, 2, 3, 4, 5, 6];
+const filterOddNumbers = numbers.filter((num) => num % 2 !== 0);
+
+console.log(filterOddNumbers);
+
+// напишите функцию filterNamesByFirstLetter, которая принимает массив имен и букву в качестве аргументов и возвращает новый массив, содержащий только имена, начинающиеся с этой буквы (регистронезависимо). Используйте метод filter() для решения этой задачи.
+
+function filterNamesByFirstLetter(names, letter) {
+	const filteredNames = names.filter(
+		(name) => name.charAt(0).toLowerCase() === letter.toLowerCase()
+	);
+	return filteredNames;
 }
 
-console.log(calculateSum(arr));
+const names = ["Alice", "Bob", "Charlie", "Dave", "Edward"];
+console.log(filterNamesByFirstLetter(names, "a"));
