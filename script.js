@@ -117,19 +117,40 @@
 
 // напишите функцию filterOddNumbers, которая принимает массив чисел и возвращает новый массив, содержащий только нечетные числа из исходного массива. Используйте метод filter() для решения этой задачи.
 
-const numbers = [1, 2, 3, 4, 5, 6];
-const filterOddNumbers = numbers.filter((num) => num % 2 !== 0);
+// const numbers = [1, 2, 3, 4, 5, 6];
+// const filterOddNumbers = numbers.filter((num) => num % 2 !== 0);
 
-console.log(filterOddNumbers);
+// console.log(filterOddNumbers);
 
-// напишите функцию filterNamesByFirstLetter, которая принимает массив имен и букву в качестве аргументов и возвращает новый массив, содержащий только имена, начинающиеся с этой буквы (регистронезависимо). Используйте метод filter() для решения этой задачи.
+// // напишите функцию filterNamesByFirstLetter, которая принимает массив имен и букву в качестве аргументов и возвращает новый массив, содержащий только имена, начинающиеся с этой буквы (регистронезависимо). Используйте метод filter() для решения этой задачи.
 
-function filterNamesByFirstLetter(names, letter) {
-	const filteredNames = names.filter(
-		(name) => name.charAt(0).toLowerCase() === letter.toLowerCase()
-	);
-	return filteredNames;
+// function filterNamesByFirstLetter(names, letter) {
+// 	const filteredNames = names.filter(
+// 		(name) => name.charAt(0).toLowerCase() === letter.toLowerCase()
+// 	);
+// 	return filteredNames;
+// }
+
+// const names = ["Alice", "Bob", "Charlie", "Dave", "Edward"];
+// console.log(filterNamesByFirstLetter(names, "a"));
+
+// Задача: написать функцию, которая получает на вход массив чисел и возвращает их сумму.
+
+const nums = [1, 2, 5, 6, 3, 4, 9];
+
+const numsPlus = nums.reduce((acc, num) => {
+	return acc + num;
+}, 0);
+
+console.log(numsPlus);
+
+function sum(a, b, ...args) {
+	let result = a + b;
+
+	for (let i = 0; i < args.length; i++) {
+		result += args[i];
+	}
+	return result;
 }
 
-const names = ["Alice", "Bob", "Charlie", "Dave", "Edward"];
-console.log(filterNamesByFirstLetter(names, "a"));
+console.log(sum(...nums));
