@@ -95,9 +95,22 @@
 // //
 
 // Напишите функцию, которая принимает массив чисел и возвращает новый массив, состоящий из удвоенных значений каждого элемента входного массива.
-const nums = [2, 5, 7, 11];
-function doubleNumbers(num) {
-	return num * 2;
+// const nums = [2, 5, 7, 11];
+// function doubleNumbers(num) {
+// 	return num * 2;
+// }
+// const newArr = nums.map(doubleNumbers);
+// console.log(newArr);
+
+// Напишите функцию calculateSum, которая принимает массив чисел и возвращает сумму всех чисел в массиве.
+
+const arr = [1, 2, 3, 4, 5];
+function calculateSum(num) {
+	let sum = 0;
+	for (let i = 0; i < num.length; i++) {
+		sum = sum + num[i];
+	}
+	return sum;
 }
-const newArr = nums.map(doubleNumbers);
-console.log(newArr);
+
+console.log(calculateSum(arr));
