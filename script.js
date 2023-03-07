@@ -136,21 +136,21 @@
 
 // Задача: написать функцию, которая получает на вход массив чисел и возвращает их сумму.
 
-const nums = [1, 2, 5, 6, 3, 4, 9];
+// const nums = [1, 2, 5, 6, 3, 4, 9];
 
-const numsPlus = nums.reduce((acc, num) => {
-	return acc + num;
-}, 0);
+// const numsPlus = nums.reduce((acc, num) => {
+// 	return acc + num;
+// }, 0);
 
-console.log(numsPlus);
+// console.log(numsPlus);
 
-function sum(a, b, ...args) {
-	let result = a + b;
+// function sum(a, b, ...args) {
+// 	let result = a + b;
 
-	for (let i = 0; i < args.length; i++) {
-		result += args[i];
-	}
-	return result;
-}
+// 	for (let i = 0; i < args.length; i++) {
+// 		result += args[i];
+// 	}
+// 	return result;
+// }
 
-console.log(sum(...nums));
+// console.log(sum(...nums));
