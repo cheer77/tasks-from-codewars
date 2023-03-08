@@ -201,3 +201,14 @@ function score(dice) {
 	score += counts[0] * 100 + counts[4] * 50;
 	return score;
 }
+
+//Playing with digits
+function digPow(n, p) {
+	let digits = n.toString().split(""); // split n into digits
+	let sum = 0;
+	for (let i = 0; i < digits.length; i++) {
+		sum += Math.pow(parseInt(digits[i]), p + i); // sum the powers of the digits
+	}
+	let k = sum / n; // calculate k
+	return Number.isInteger(k) ? k : -1; // return k if it's an integer, otherwise return -1
+}
