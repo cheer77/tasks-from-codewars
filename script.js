@@ -213,11 +213,32 @@
 // 	return Number.isInteger(k) ? k : -1;
 // }
 
-const btn = document.getElementsByClassName("accordion");
-const panel = document.getElementsByClassName("panel");
+// const btn = document.getElementsByClassName("accordion");
+// const panel = document.getElementsByClassName("panel");
 
-for (let i = 0; i < btn.length; i++) {
-	btn[i].addEventListener("click", function () {
-		panel[i].classList.toggle("show");
-	});
+// for (let i = 0; i < btn.length; i++) {
+// 	btn[i].addEventListener("click", function () {
+// 		panel[i].classList.toggle("show");
+// 	});
+// }
+
+const btns = document.querySelectorAll(".accordion");
+const panels = document.querySelectorAll(".panel");
+let currentPanel = null;
+
+function according(e) {
+	const panel = this.nextElementSibling;
+	const index = panel.getAttribute("data-index");
+
+	if (currentPanel && currentPanel.getAttribute("data-index") !== index) {
+		currentPanel.classList.remove("show");
+	}
+
+	panel.classList.toggle("show");
+	currentPanel = panel;
 }
+
+btns.forEach((btn, index) => {
+	btn.addEventListener("click", according);
+	panels[index].setAttribute("data-index", index);
+});
