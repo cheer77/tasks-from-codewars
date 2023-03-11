@@ -176,39 +176,48 @@
 //  2 4 4 5 4   450:  400 (for three 4s) + 50 (for the 5)
 // In some languages, it is possible to mutate the input to the function. This is something that you should never do. If you mutate the input, you will not be able to pass all the tests.
 
-function score(dice) {
-	let score = 0;
-	let counts = [0, 0, 0, 0, 0, 0];
-	for (let i = 0; i < dice.length; i++) {
-		counts[dice[i] - 1]++;
-	}
-	for (let i = 0; i < counts.length; i++) {
-		if (counts[i] >= 3) {
-			if (i == 0) {
-				score += 1000;
-			} else {
-				score += (i + 1) * 100;
-			}
-			counts[i] -= 3;
-		}
-		if (i == 0 && counts[i] > 0) {
-			score += counts[i] * 100;
-		}
-		if (i == 4 && counts[i] > 0) {
-			score += counts[i] * 50;
-		}
-	}
-	score += counts[0] * 100 + counts[4] * 50;
-	return score;
-}
+// function score(dice) {
+// 	let score = 0;
+// 	let counts = [0, 0, 0, 0, 0, 0];
+// 	for (let i = 0; i < dice.length; i++) {
+// 		counts[dice[i] - 1]++;
+// 	}
+// 	for (let i = 0; i < counts.length; i++) {
+// 		if (counts[i] >= 3) {
+// 			if (i == 0) {
+// 				score += 1000;
+// 			} else {
+// 				score += (i + 1) * 100;
+// 			}
+// 			counts[i] -= 3;
+// 		}
+// 		if (i == 0 && counts[i] > 0) {
+// 			score += counts[i] * 100;
+// 		}
+// 		if (i == 4 && counts[i] > 0) {
+// 			score += counts[i] * 50;
+// 		}
+// 	}
+// 	score += counts[0] * 100 + counts[4] * 50;
+// 	return score;
+// }
 
-//Playing with digits
-function digPow(n, p) {
-	let digits = n.toString().split(""); // split n into digits
-	let sum = 0;
-	for (let i = 0; i < digits.length; i++) {
-		sum += Math.pow(parseInt(digits[i]), p + i); // sum the powers of the digits
-	}
-	let k = sum / n; // calculate k
-	return Number.isInteger(k) ? k : -1; // return k if it's an integer, otherwise return -1
+// //Playing with digits
+// function digPow(n, p) {
+// 	let digits = n.toString().split("");
+// 	let sum = 0;
+// 	for (let i = 0; i < digits.length; i++) {
+// 		sum += Math.pow(parseInt(digits[i]), p + i);
+// 	}
+// 	let k = sum / n; // calculate k
+// 	return Number.isInteger(k) ? k : -1;
+// }
+
+const btn = document.getElementsByClassName("accordion");
+const panel = document.getElementsByClassName("panel");
+
+for (let i = 0; i < btn.length; i++) {
+	btn[i].addEventListener("click", function () {
+		panel[i].classList.toggle("show");
+	});
 }
